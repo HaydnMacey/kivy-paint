@@ -1,3 +1,4 @@
+from random import random
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.graphics import Color, Ellipse, Line
@@ -5,8 +6,9 @@ from kivy.graphics import Color, Ellipse, Line
 
 class MyPaintWidget(Widget):
     def on_touch_down(self, touch):
+        color = (random(), random(), random())
         with self.canvas:
-            Color(1, 0, 1)
+            Color(*color)
             # d is for diameter
             # (distance across center of circle)
             d = 10
